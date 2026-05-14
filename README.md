@@ -70,9 +70,3 @@ Distribusi responden menunjukkan bahwa responden perempuan lebih mendominasi dib
 
 Perbedaan hasil yang relatif kecil menunjukkan bahwa distribusi sampel sudah cukup mendekati kondisi populasi sebenarnya. Weighting sederhana membantu mengurangi potensi bias sehingga hasil estimasi menjadi lebih representatif.
 
-## File dalam Repository
-- `Hasil Survei.xlsx` → Dataset hasil survei online
-- `analisis.R` → Script analisis data menggunakan R
-- `Grafik distribusi responden` → Grafik distribusi jenis kelamin responden
-- `Grafik Perbandingan Metode Estimasi` → Grafik perbandingan naive estimation dan weighted estimation
-- `Laporan Analisis Data` → Laporan lengkap hasil penelitian
