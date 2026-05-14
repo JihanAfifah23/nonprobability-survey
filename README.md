@@ -40,7 +40,7 @@ Analisis deskriptif dilakukan untuk mengetahui gambaran karakteristik responden 
 Berdasarkan hasil survei, diperoleh sebanyak 30 responden dengan distribusi jenis kelamin terdiri atas 10 responden laki-laki (33,33%) dan 20 responden perempuan (66,67%). Hasil ini menunjukkan bahwa mayoritas responden dalam penelitian ini adalah perempuan.
 
 ### Grafik Distribusi Responden
-Visualisasi data dilakukan menggunakan diagram batang dan pie chart untuk memperlihatkan distribusi responden berdasarkan jenis kelamin. Grafik menunjukkan bahwa jumlah responden perempuan lebih mendominasi dibandingkan responden laki-laki.
+Visualisasi data dilakukan menggunakan pie chart untuk memperlihatkan distribusi responden berdasarkan jenis kelamin. Grafik menunjukkan bahwa jumlah responden perempuan lebih mendominasi dibandingkan responden laki-laki.
 
 ### Naive Estimation
 Naive estimation digunakan untuk menghitung estimasi awal tingkat kepuasan mahasiswa tanpa melakukan pembobotan terhadap data responden.
