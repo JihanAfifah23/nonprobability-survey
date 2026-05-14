@@ -37,6 +37,12 @@ Tahapan analisis data meliputi:
 ### Analisis Deskriptif
 Analisis deskriptif dilakukan untuk mengetahui gambaran karakteristik responden yang berpartisipasi dalam survei online. Karakteristik responden yang dianalisis dalam penelitian ini adalah berdasarkan jenis kelamin.
 
+| Jenis Kelamin | Frekuensi | Persentase |
+|---|---|---|
+| Laki-laki | 10 | 33.33% |
+| Perempuan | 20 | 66.67% |
+| Total | 30 | 100% |
+
 Berdasarkan hasil survei, diperoleh sebanyak 30 responden dengan distribusi jenis kelamin terdiri atas 10 responden laki-laki (33,33%) dan 20 responden perempuan (66,67%). Hasil ini menunjukkan bahwa mayoritas responden dalam penelitian ini adalah perempuan.
 
 ### Grafik Distribusi Responden
@@ -60,6 +66,11 @@ Hasil ini menunjukkan adanya sedikit perubahan dibandingkan naive estimation seb
 
 ### Perbandingan Estimasi
 Perbandingan hasil estimasi dilakukan untuk melihat perbedaan antara naive estimation dan weighted estimation.
+
+| Metode Estimasi | Hasil |
+|---|---|
+| Naive Estimation | 83% |
+| Weighted Estimation | 80% |
 
 Hasil analisis menunjukkan bahwa naive estimation menghasilkan tingkat kepuasan sebesar 83%, sedangkan weighted estimation menghasilkan tingkat kepuasan sebesar 80%. Perbedaan hasil yang relatif kecil menunjukkan bahwa distribusi sampel responden sudah cukup mendekati kondisi populasi sebenarnya.
 
