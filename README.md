@@ -55,7 +55,7 @@ Berdasarkan hasil analisis menggunakan script R, diperoleh:
 - Jumlah responden puas = 25 orang
 - Total responden = 30 orang
 
-Hasil naive estimation menunjukkan tingkat kepuasan mahasiswa sebesar 83%.
+Hasil naive estimation menunjukkan 83% mahasiswa puas terhadap pelayanan akademik di FMIPA Unram, tetapi estimasi berpotensi bias karena komposisi sampel tidak mewakili populasi 
 
 ### Weighting Sederhana
 Weighting sederhana dilakukan untuk menyesuaikan distribusi sampel agar lebih mendekati kondisi populasi sebenarnya berdasarkan jenis kelamin.
@@ -75,7 +75,7 @@ Perbandingan hasil estimasi dilakukan untuk melihat perbedaan antara naive estim
 Hasil analisis menunjukkan bahwa naive estimation menghasilkan tingkat kepuasan sebesar 83%, sedangkan weighted estimation menghasilkan tingkat kepuasan sebesar 80%. Perbedaan hasil yang relatif kecil menunjukkan bahwa distribusi sampel responden sudah cukup mendekati kondisi populasi sebenarnya.
 
 ## Kesimpulan
-Berdasarkan hasil analisis non-probability sampling pada survei online mengenai tingkat kepuasan mahasiswa terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, diperoleh bahwa mayoritas mahasiswa merasa puas terhadap pelayanan administrasi akademik yang diberikan.
+Berdasarkan hasil analisis non-probability sampling pada survei online mengenai tingkat kepuasan mahasiswa terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, diperoleh bahwa mayoritas responden dalam penelitian ini merasa puas terhadap pelayanan administrasi akademik yang diberikan.
 
 Distribusi responden menunjukkan bahwa responden perempuan lebih mendominasi dibandingkan responden laki-laki. Hasil naive estimation menunjukkan tingkat kepuasan sebesar 83%, sedangkan setelah dilakukan weighting sederhana berdasarkan jenis kelamin diperoleh estimasi sebesar 80%.
 
