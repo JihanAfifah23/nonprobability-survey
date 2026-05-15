@@ -99,7 +99,7 @@ tabel_umur
 
 ---
 
-### 4. Grafik Distribusi Responden (Pie Chart)
+### 4. Grafik Distribusi Responden
 Grafik pie digunakan untuk memvisualisasikan distribusi responden berdasarkan jenis kelamin sehingga lebih mudah dipahami secara visual.
 
 ```r
