@@ -12,7 +12,7 @@ FMIPA Universitas Mataram sebagai salah satu fakultas dengan jumlah mahasiswa ya
 ## Tujuan
 Tujuan dari penelitian ini adalah:
 - Mengetahui tingkat kepuasan mahasiswa terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram melalui survei online.
-- Mengetahui distribusi responden berdasarkan jenis kelamin.
+- Mengetahui distribusi responden.
 - Menghitung hasil naive estimation terhadap tingkat kepuasan mahasiswa.
 - Melakukan weighting sederhana berdasarkan jenis kelamin untuk memperoleh hasil estimasi yang lebih representatif.
 
