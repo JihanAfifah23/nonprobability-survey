@@ -250,7 +250,7 @@ Grafik menunjukkan bahwa jumlah responden statistika lebih mendominasi dibanding
 
 <img width="807" height="842" alt="image" src="https://github.com/user-attachments/assets/c99bacec-8dcd-409c-b982-e6f9beeb4956" />
 
-Grafik menunjukkan bahwa jumlah responden umur 20-21 tahun lebih mendominasi dibandingkan responden <18, >21, 19-20 tahun.
+Grafik menunjukkan bahwa jumlah responden umur 20-21 tahun lebih mendominasi dibandingkan responden <18, >21, 18-19 tahun.
 
 ### Naive Estimation
 Naive estimation digunakan untuk menghitung estimasi awal tingkat kepuasan mahasiswa tanpa melakukan pembobotan terhadap data responden.
