@@ -210,3 +210,6 @@ Distribusi responden menunjukkan bahwa responden perempuan lebih mendominasi dib
 
 Perbedaan hasil yang relatif kecil menunjukkan bahwa distribusi sampel sudah cukup mendekati kondisi populasi sebenarnya. Weighting sederhana membantu mengurangi potensi bias sehingga hasil estimasi menjadi lebih representatif.
 
+## Link Kuesioner
+
+https://docs.google.com/forms/d/e/1FAIpQLSeu39SBVG_iESo01b_hiXV-DUnDqZrHVVGbzfqrI0NlJfssfg/viewform?usp=header
