@@ -1,123 +1,155 @@
 # nonprobability-survey
 
-# Analisis Tingkat Kepuasan Mahasiswa Statistika terhadap Pelayanan Administrasi Akademik di FMIPA Universitas Mataram
+# Analisis Tingkat Kepuasan Mahasiswa Kimia terhadap Pelayanan Administrasi Akademik di FMIPA Universitas Mataram
 
 ## Latar Belakang
 Pelayanan administrasi akademik merupakan salah satu aspek penting dalam menunjang kelancaran kegiatan perkuliahan di perguruan tinggi. Pelayanan yang baik dapat membantu mahasiswa dalam memperoleh informasi akademik, mengurus dokumen perkuliahan, serta memenuhi berbagai kebutuhan administrasi dengan lebih mudah dan cepat. Sebaliknya, pelayanan yang kurang optimal dapat menyebabkan hambatan dalam proses akademik mahasiswa.
 
 Kepuasan mahasiswa terhadap pelayanan administrasi akademik dapat digunakan sebagai salah satu indikator kualitas pelayanan yang diberikan oleh institusi pendidikan. Oleh karena itu, evaluasi terhadap pelayanan administrasi akademik perlu dilakukan agar pihak fakultas dapat mengetahui kelebihan maupun kekurangan pelayanan yang telah diberikan.
 
-FMIPA Universitas Mataram sebagai salah satu fakultas dengan jumlah mahasiswa yang cukup banyak tentunya memerlukan pelayanan administrasi akademik yang baik dan responsif. Untuk mengetahui tingkat kepuasan mahasiswa statistika terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, dilakukan survei online menggunakan Google Form. Penelitian ini menggunakan teknik non probability sampling dengan metode convenience sampling.
+FMIPA Universitas Mataram sebagai salah satu fakultas dengan jumlah mahasiswa yang cukup banyak tentunya memerlukan pelayanan administrasi akademik yang baik dan responsif. Untuk mengetahui tingkat kepuasan mahasiswa kimia terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, dilakukan survei online menggunakan Google Form. Penelitian ini menggunakan teknik non probability sampling dengan metode convenience sampling.
 
 ## Tujuan
 Tujuan dari penelitian ini adalah:
-- Mengetahui tingkat kepuasan mahasiswa statistika terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram melalui survei online.
+- Mengetahui tingkat kepuasan mahasiswa kimia terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram melalui survei online.
 - Mengetahui distribusi responden berdasarkan jenis kelamin.
 - Menghitung hasil naive estimation terhadap tingkat kepuasan mahasiswa.
 - Melakukan weighting sederhana berdasarkan jenis kelamin untuk memperoleh hasil estimasi yang lebih representatif.
 
 ## Metode
-Penelitian ini merupakan penelitian kuantitatif dengan pendekatan survei online. Data diperoleh melalui penyebaran kuesioner menggunakan Google Form kepada mahasiswa Satistika FMIPA Universitas Mataram.
+Penelitian ini merupakan penelitian kuantitatif dengan pendekatan survei online. Data diperoleh melalui penyebaran kuesioner menggunakan Google Form kepada mahasiswa Kimia FMIPA Universitas Mataram.
 
 Teknik sampling yang digunakan adalah non probability sampling dengan metode convenience sampling, yaitu pengambilan sampel berdasarkan kemudahan memperoleh responden. Jumlah responden dalam penelitian ini sebanyak 30 mahasiswa.
 
 Pengolahan data dilakukan menggunakan bahasa pemrograman R dengan bantuan package `readxl`. Analisis dilakukan menggunakan script pada file `analisis.R`.
 
-Tahapan analisis data meliputi:
-1. Import data survei dari file Excel menggunakan sintax :
+## Tahapan Analisis Data
 
-   library(readxl)
+### 1. Import Data
+Pada tahap ini, data hasil survei yang telah disimpan dalam file Excel diimpor ke dalam R menggunakan package `readxl`. Proses ini bertujuan agar data dapat diolah dan dianalisis lebih lanjut.
 
-   data <-read_excel("C:/Users/asus/Downloads/Hasil Survei.xlsx")
+```r
+library(readxl)
 
-2. Analisis deskriptif distribusi responden berdasarkan jenis kelamin menggunakan sintax :
+data <- read_excel("C:/Users/asus/Downloads/Hasil Survei.xlsx")
+```
 
-    table(data$`Jenis Kelamin`)
+---
 
-   prop.table(table(data$`Jenis Kelamin`))*100
+### 2. Analisis Deskriptif Jenis Kelamin
+Analisis ini dilakukan untuk mengetahui distribusi responden berdasarkan jenis kelamin. Fungsi `table()` digunakan untuk menghitung jumlah responden pada setiap kategori, sedangkan `prop.table()` digunakan untuk menghitung persentasenya.
 
-3. Pembuatan tabel distribusi frekuensi dan persentase responden menggunakan sintax :
+```r
+table(data$`Jenis Kelamin`)
 
-    frekuensi <- table(data$`Jenis Kelamin`)
+prop.table(table(data$`Jenis Kelamin`)) * 100
+```
 
-   frekuensi
+---
 
-   persentase <- prop.table(frekuensi)*100
+### 3. Tabel Distribusi Frekuensi dan Persentase
+Tahap ini bertujuan untuk menyajikan data dalam bentuk tabel yang lebih rapi agar mudah dibaca dan diinterpretasikan.
 
-   persentase
+```r
+frekuensi <- table(data$`Jenis Kelamin`)
+frekuensi
 
-   tabel_jk <- data.frame(
-   Jenis_Kelamin = names(frekuensi),
-   Frekuensi = as.vector(frekuensi),
-   Persentase = round(as.vector(persentase),2)
-  )
-  
-   tabel_jk
+persentase <- prop.table(frekuensi) * 100
+persentase
 
-4. Pembuatan grafik distribusi responden menggunakan pie chart menggunakan sintax :
+tabel_jk <- data.frame(
+  Jenis_Kelamin = names(frekuensi),
+  Frekuensi = as.vector(frekuensi),
+  Persentase = round(as.vector(persentase), 2)
+)
 
-    pie(table(data$`Jenis Kelamin`),
-    main = " Distribusi Responden Berdasarkan Jenis Kelamin")
-   
-5. Perhitungan naive estimation untuk memperoleh estimasi awal tingkat kepuasan mahasiswa menggunakan sintax :
+tabel_jk
+```
 
-   puas <- sum(
-  data$`10. Secara keseluruhan, saya puas terhadap pelayanan administrasi akademik FMIPA
-Universitas Mataram.` >= 4
- )
-   n <- nrow(data)
+---
 
-   p <- puas/n
+### 4. Grafik Distribusi Responden (Pie Chart)
+Grafik pie digunakan untuk memvisualisasikan distribusi responden berdasarkan jenis kelamin sehingga lebih mudah dipahami secara visual.
 
-   p
+```r
+pie(
+  table(data$`Jenis Kelamin`),
+  main = "Distribusi Responden Berdasarkan Jenis Kelamin"
+)
+```
 
-   p*100
-    
-6. Perhitungan weighting sederhana berdasarkan jenis kelamin untuk mengurangi bias sampel menggunakan sintax :
+---
 
-   pop_laki <- 0.5
+### 5. Naive Estimation Tingkat Kepuasan
+Naive estimation digunakan untuk memperoleh estimasi awal tingkat kepuasan mahasiswa. Responden dianggap puas jika memberikan nilai ≥ 4 (skala Likert). Nilai proporsi dihitung dengan membagi jumlah responden yang puas dengan total responden.
 
-   pop_perempuan <- 0.5
+```r
+puas <- sum(
+  data$`10. Secara keseluruhan, saya puas terhadap pelayanan administrasi akademik FMIPA Universitas Mataram.` >= 4
+)
 
-   sampel_laki <- 0.3333
+n <- nrow(data)
 
-   sampel_perempuan <- 0.6667
+p <- puas / n
 
-   w_laki <- pop_laki/sampel_laki
+p
+p * 100
+```
 
-   w_perempuan <- pop_perempuan/sampel_perempuan
+---
 
-   w_laki
+### 6. Weighting Sederhana Berdasarkan Jenis Kelamin
+Weighting dilakukan untuk mengurangi bias akibat ketidakseimbangan sampel. Bobot dihitung berdasarkan perbandingan antara proporsi populasi dan proporsi sampel.
 
-   w_perempuan
+```r
+# Proporsi populasi
+pop_laki <- 0.5
+pop_perempuan <- 0.5
 
-   puas_laki <- 7
+# Proporsi sampel
+sampel_laki <- 0.3333
+sampel_perempuan <- 0.6667
 
-   puas_perempuan <- 18
+# Perhitungan bobot
+w_laki <- pop_laki / sampel_laki
+w_perempuan <- pop_perempuan / sampel_perempuan
 
-   weighted_laki <- puas_laki*w_laki
+w_laki
+w_perempuan
 
-   weighted_perempuan <- puas_perempuan*w_perempuan
+# Jumlah responden puas
+puas_laki <- 7
+puas_perempuan <- 18
 
-   total_weighted <- weighted_laki + weighted_perempuan
+# Perhitungan weighted estimation
+weighted_laki <- puas_laki * w_laki
+weighted_perempuan <- puas_perempuan * w_perempuan
 
-   weighted_estimation <- total_weighted/n
+total_weighted <- weighted_laki + weighted_perempuan
 
-   weighted_estimation
+weighted_estimation <- total_weighted / n
 
-   weighted_estimation*100
+weighted_estimation
+weighted_estimation * 100
+```
 
-7. Perbandingan hasil naive estimation dan weighted estimation menggunakan grafik batang dengan sintax :
-   estimasi <- c(p*100,
-              weighted_estimation*100)
+---
 
-   nama <- c("Naive Estimation",
-          "Weighted Estimation")
+### 7. Perbandingan Naive dan Weighted Estimation
+Tahap ini bertujuan untuk membandingkan hasil estimasi sebelum dan sesudah dilakukan pembobotan menggunakan grafik batang.
 
-   barplot(estimasi,
-        names.arg = nama,
-        main = "Perbandingan Hasil Estimasi",
-        ylab = "Persentase")
+```r
+estimasi <- c(p * 100, weighted_estimation * 100)
+
+nama <- c("Naive Estimation", "Weighted Estimation")
+
+barplot(
+  estimasi,
+  names.arg = nama,
+  main = "Perbandingan Hasil Estimasi",
+  ylab = "Persentase"
+)
+```
 
 ## Hasil dan Pembahasan
 
@@ -148,7 +180,7 @@ diperoleh:
 - Jumlah responden puas = 25 orang
 - Total responden = 30 orang
 
-Hasil naive estimation menunjukkan 83% mahasiswa statistika puas terhadap pelayanan akademik di FMIPA Unram, tetapi estimasi berpotensi bias karena komposisi sampel tidak mewakili populasi 
+Hasil naive estimation menunjukkan 83% mahasiswa kimia puas terhadap pelayanan akademik di FMIPA Unram, tetapi estimasi berpotensi bias karena komposisi sampel tidak mewakili populasi 
 
 ### Weighting Sederhana
 Weighting sederhana dilakukan untuk menyesuaikan distribusi sampel agar lebih mendekati kondisi populasi sebenarnya berdasarkan jenis kelamin.
@@ -172,7 +204,7 @@ Perbandingan hasil estimasi dilakukan untuk melihat perbedaan antara naive estim
 Hasil analisis menunjukkan bahwa naive estimation menghasilkan tingkat kepuasan sebesar 83%, sedangkan weighted estimation menghasilkan tingkat kepuasan sebesar 80%. Perbedaan hasil yang relatif kecil menunjukkan bahwa distribusi sampel responden sudah cukup mendekati kondisi populasi sebenarnya.
 
 ## Kesimpulan
-Berdasarkan hasil analisis non-probability sampling pada survei online mengenai tingkat kepuasan mahasiswa statistika terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, diperoleh bahwa mayoritas responden dalam penelitian ini merasa puas terhadap pelayanan administrasi akademik yang diberikan.
+Berdasarkan hasil analisis non-probability sampling pada survei online mengenai tingkat kepuasan mahasiswa kimia terhadap pelayanan administrasi akademik di FMIPA Universitas Mataram, diperoleh bahwa mayoritas responden dalam penelitian ini merasa puas terhadap pelayanan administrasi akademik yang diberikan.
 
 Distribusi responden menunjukkan bahwa responden perempuan lebih mendominasi dibandingkan responden laki-laki. Hasil naive estimation menunjukkan tingkat kepuasan sebesar 83%, sedangkan setelah dilakukan weighting sederhana berdasarkan jenis kelamin diperoleh estimasi sebesar 80%.
 
