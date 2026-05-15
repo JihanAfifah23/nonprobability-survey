@@ -1,5 +1,5 @@
 # ANALISIS NON-PROBABILITY SAMPLING
-# Tingkat Kepuasan Mahasiswa terhadap Pelayanan Administrasi Akademik FMIPA Universitas Mataram
+# Tingkat Kepuasan Mahasiswa Kimia terhadap Pelayanan Administrasi Akademik FMIPA Universitas Mataram
 # 1. Import Data
 library(readxl)
 data <-read_excel("C:/Users/asus/Downloads/Hasil Survei.xlsx")
@@ -21,14 +21,9 @@ tabel_jk <- data.frame(
   Persentase = round(as.vector(persentase),2)
 )
 tabel_jk
-# Diagram batang
-barplot(table(data$`Jenis Kelamin`),
-        main = "Distribusi Responden Berdasarkan Jenis Kelamin",
-        xlab = "Jenis Kelamin",
-        ylab = "Frekuensi")
 # Pie chart
 pie(table(data$`Jenis Kelamin`),
-    main = " Distribusi Responden Berdasarka Jenis Kelamin")
+    main = " Distribusi Responden Berdasarkan Jenis Kelamin")
 # 4. Naive Estimation
 # Menghitung jumlah responden puas
 # (Puas + Sangat Puas)
