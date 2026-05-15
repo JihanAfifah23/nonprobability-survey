@@ -36,13 +36,21 @@ data <- read_excel("C:/Users/asus/Downloads/Hasil Survei.xlsx")
 
 ---
 
-### 2. Analisis Deskriptif Jenis Kelamin
+### 2. Analisis Deskriptif 
 Analisis ini dilakukan untuk mengetahui distribusi responden berdasarkan jenis kelamin. Fungsi `table()` digunakan untuk menghitung jumlah responden pada setiap kategori, sedangkan `prop.table()` digunakan untuk menghitung persentasenya.
 
 ```r
 table(data$`Jenis Kelamin`)
 
 prop.table(table(data$`Jenis Kelamin`)) * 100
+
+table(data$`Program studi`)
+
+prop.table(table(data$`Program studi`))*100
+
+table(data$`Umur`)
+
+prop.table(table(data$`Program studi`))*100
 ```
 
 ---
@@ -64,6 +72,29 @@ tabel_jk <- data.frame(
 )
 
 tabel_jk
+
+frekuensi_prodi <- table(data$`Program studi`)
+persentase_prodi <- prop.table(frekuensi_prodi)*100
+
+tabel_prodi <- data.frame(
+  Program_Studi = names(frekuensi_prodi),
+  Frekuensi = as.vector(frekuensi_prodi),
+  Persentase = round(as.vector(persentase_prodi),2)
+)
+
+tabel_prodi
+
+frekuensi_umur <- table(data$`Umur`)
+persentase_umur <- prop.table(frekuensi_umur)*100
+
+tabel_umur <- data.frame(
+  Umur = names(frekuensi_umur),
+  Frekuensi = as.vector(frekuensi_umur),
+  Persentase = round(as.vector(persentase_umur),2)
+)
+
+tabel_umur
+
 ```
 
 ---
@@ -76,6 +107,27 @@ pie(
   table(data$`Jenis Kelamin`),
   main = "Distribusi Responden Berdasarkan Jenis Kelamin"
 )
+
+frekuensi_prodi <- sort(table(data$`Program studi`), decreasing = TRUE)
+
+barplot(
+  frekuensi_prodi,
+  main = "Distribusi Responden Berdasarkan Program Studi",
+  xlab = "Program Studi",
+  ylab = "Frekuensi",
+  col = "lightblue"
+)
+
+frekuensi_umur <- table(data$`Umur`)
+
+barplot(
+  frekuensi_umur,
+  main = "Distribusi Responden Berdasarkan Umur",
+  xlab = "Umur",
+  ylab = "Frekuensi",
+  col = "lightgreen"
+)
+
 ```
 
 ---
@@ -154,7 +206,7 @@ barplot(
 ## Hasil dan Pembahasan
 
 ### Analisis Deskriptif
-Analisis deskriptif dilakukan untuk mengetahui gambaran karakteristik responden yang berpartisipasi dalam survei online. Karakteristik responden yang dianalisis dalam penelitian ini adalah berdasarkan jenis kelamin.
+Analisis deskriptif dilakukan untuk mengetahui gambaran karakteristik responden yang berpartisipasi dalam survei online. Karakteristik responden yang dianalisis dalam penelitian ini adalah berdasarkan jenis kelamin, program studi dan umur.
 
 | Jenis Kelamin | Frekuensi | Persentase |
 |---|---|---|
@@ -164,12 +216,41 @@ Analisis deskriptif dilakukan untuk mengetahui gambaran karakteristik responden 
 
 Berdasarkan hasil survei, diperoleh sebanyak 30 responden dengan distribusi jenis kelamin terdiri atas 10 responden laki-laki (33,33%) dan 20 responden perempuan (66,67%). Hasil ini menunjukkan bahwa mayoritas responden dalam penelitian ini adalah perempuan.
 
+| Program Studi | Frekuensi | Persentase (%) |
+|---------------|-----------|----------------|
+| Biologi       | 3         | 10,00%          |
+| Fisika        | 5         | 16,67%         |
+| Kimia         | 5         | 16,67%         |
+| Matematika    | 6         | 20,00%          |
+| Statistika    | 11        | 36,67%          |
+| **Total**     | **30**    | **100,00%**     |
+
+Berdasarkan tabel distribusi responden menurut program studi, responden terbanyak berasal dari Program Studi Statistika sebanyak 11 orang (36,67%), sedangkan responden paling sedikit berasal dari Program Studi Biologi sebanyak 3 orang (10,00%).
+
+| Umur | Frekuensi | Persentase |
+|------|-----------|-------------|
+| < 18 tahun | 1  | 3,33%  |
+| 18–19 tahun | 1  | 3,33%  |
+| 20–21 tahun | 26 | 86,67% |
+| > 21 tahun | 2  | 6,67%  |
+| **Total** | **30** | **100,00%** |
+
+Berdasarkan tabel distribusi umur responden, mayoritas responden berada pada rentang usia 20–21 tahun yaitu sebanyak 26 orang (86,67%). Sisanya berasal dari usia di bawah 18 tahun dan 18–19 tahun masing-masing 1 orang (3,33%), serta usia di atas 21 tahun sebanyak 2 orang (6,67%). Hal ini menunjukkan bahwa responden penelitian didominasi oleh kelompok usia mahasiswa pada rentang usia produktif perkuliahan.
+
 ### Grafik Distribusi Responden
 Visualisasi data dilakukan menggunakan pie chart untuk memperlihatkan distribusi responden berdasarkan jenis kelamin. 
 
 <img width="1097" height="812" alt="Grafik Distribusi Responden" src="https://github.com/user-attachments/assets/6ceb3cff-6286-4a90-b223-8202cb00251c" />
 
 Grafik menunjukkan bahwa jumlah responden perempuan lebih mendominasi dibandingkan responden laki-laki.
+
+<img width="775" height="845" alt="image" src="https://github.com/user-attachments/assets/c7063d87-f253-487f-aecc-8c3179497617" />
+
+Grafik menunjukkan bahwa jumlah responden statistika lebih mendominasi dibandingkan responden metematika, kimia,fisika, dan biologi.
+
+<img width="807" height="842" alt="image" src="https://github.com/user-attachments/assets/c99bacec-8dcd-409c-b982-e6f9beeb4956" />
+
+Grafik menunjukkan bahwa jumlah responden umur 20-21 tahun lebih mendominasi dibandingkan responden <18, >21, 19-20 tahun.
 
 ### Naive Estimation
 Naive estimation digunakan untuk menghitung estimasi awal tingkat kepuasan mahasiswa tanpa melakukan pembobotan terhadap data responden.
